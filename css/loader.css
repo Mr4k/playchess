@@ -6,7 +6,7 @@
   width: 1em;
   height: 1em;
   border-radius: 50%;
-  position: relative;
+  position: absolute;
   text-indent: -9999em;
   z-index: 15;
   left: 50%;
