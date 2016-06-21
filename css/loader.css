@@ -9,8 +9,8 @@
   position: absolute;
   text-indent: -9999em;
   z-index: 15;
-  left: 12.5%;
-  top: 12.5%;
+  left: 50%;
+  top: 50%;
   -webkit-animation: load4 1.3s infinite linear;
   animation: load4 1.3s infinite linear;
   -webkit-transform: translateZ(0);
