@@ -11,6 +11,7 @@
   z-index: 15;
   left: 50%;
   top: 50%;
+  transform: translate(-50%, -50%);
   -webkit-animation: load4 1.3s infinite linear;
   animation: load4 1.3s infinite linear;
   -webkit-transform: translateZ(0);
