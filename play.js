@@ -1,5 +1,4 @@
-var board,
-  game = new Chess();
+var board, game = new Chess();
 
 // do not pick up pieces if the game is over
 // only pick up pieces for White
@@ -10,7 +9,7 @@ var onDragStart = function(source, piece, position, orientation) {
   }
 };
 
-var makeRandomMove = function() {
+var makeComputerMove = function() {
   var possibleMoves = game.moves();
 
   // game over
@@ -32,8 +31,8 @@ var onDrop = function(source, target) {
   // illegal move
   if (move === null) return 'snapback';
 
-  // make random legal move for black
-  window.setTimeout(makeRandomMove, 250);
+  // ask server for best legal move for black
+  window.setTimeout(makeComputerMove, 10000);
 };
 
 // update the board position after the piece snap
