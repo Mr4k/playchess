@@ -10,14 +10,19 @@ var onDragStart = function(source, piece, position, orientation) {
 };
 
 var makeComputerMove = function() {
-  var possibleMoves = game.moves();
-
-  // game over
-  if (possibleMoves.length === 0) return;
-
-  var randomIndex = Math.floor(Math.random() * possibleMoves.length);
-  game.move(possibleMoves[randomIndex]);
-  board.position(game.fen());
+  //send an ajax request
+  $.ajax({
+      url: 'http://10.0.0.207:8888',
+      type: 'POST',
+      data: {fen: game.fen()},
+      contentType: 'application/json; charset=utf-8',
+      dataType: 'text',
+      async: false,
+      success: function(move) {
+          game.move(move);
+          board.position(game.fen());
+      }
+  });
 };
 
 var onDrop = function(source, target) {
