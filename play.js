@@ -14,7 +14,7 @@ var makeComputerMove = function() {
   $.ajax({
       url: 'http://10.0.0.207:8888',
       type: 'POST',
-      data: {fen: game.fen()},
+      data: {fen: game.fen(), string: "Hello"},
       contentType: 'application/json; charset=utf-8',
       dataType: 'text',
       async: false,
@@ -55,4 +55,4 @@ var cfg = {
 };
 
 board = ChessBoard('board', cfg);
-//$("#board").append("<div class='loader'>Loading...</div>")
+$("#board").append("<div class='loader'>Loading...</div>")
