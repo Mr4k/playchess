@@ -13,7 +13,7 @@ var makeComputerMove = function() {
   //send an ajax request
   $.ajax({
       url: 'http://10.0.0.207:8888',
-      type: 'POST',
+      method: 'POST',
       data: {fen: game.fen(), string: "Hello"},
       contentType: 'application/json; charset=utf-8',
       dataType: 'text',
