@@ -55,4 +55,4 @@ var cfg = {
 };
 
 board = ChessBoard('board', cfg);
-$("#board").append("<div class='loader'>Loading...</div>")
+//$("#board").append("<div class='loader'>Loading...</div>")
