@@ -12,7 +12,7 @@ var onDragStart = function(source, piece, position, orientation) {
 var makeComputerMove = function() {
   //send an ajax request
   $.ajax({
-      url: 'http://10.0.0.207:8888',
+      url: 'https://10.0.0.207:8888',
       method: 'POST',
       data: {fen: game.fen(), string: "Hello"},
       success: function(move) {
