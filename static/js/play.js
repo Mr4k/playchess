@@ -11,12 +11,16 @@ var onDragStart = function(source, piece, position, orientation) {
 
 var makeComputerMove = function() {
   //send an ajax request
+  console.log("request sent")
   $.ajax({
-      url: 'https://10.0.0.207:8888',
+      url: '/move',
       method: 'POST',
-      data: {fen: game.fen(), string: "Hello"},
+      data: JSON.stringify({fen : game.fen()}),
+      contentType:"application/json",
       success: function(move) {
-          game.move(move);
+          console.log(move);
+          game.move(move, {sloppy: true});
+          //console.log(game.ascii())
           board.position(game.fen());
       }
   });
@@ -34,7 +38,7 @@ var onDrop = function(source, target) {
   if (move === null) return 'snapback';
 
   // ask server for best legal move for black
-  window.setTimeout(makeComputerMove, 10000);
+  window.setTimeout(makeComputerMove, 10);
 };
 
 // update the board position after the piece snap
