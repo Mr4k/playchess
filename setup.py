@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(name='PlayChess',
       version='0.1',
-      description='A ches engine with a web interface',
+      description='A chess engine with a web interface',
       author='Peter Stefek',
       author_email='pstefek@oberlin.edu',
       url='https://playchess-pstefek.rhcloud.com',
